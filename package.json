@@ -1,0 +1,16 @@
+{
+  "name": "ts-poo",
+  "version": "1.0.0",
+  "description": "Repo con avances del curso de POO con TS por Platzi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx tsc -p ./ -w"
+  },
+  "author": "Oscar Chapa",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  }
+}
