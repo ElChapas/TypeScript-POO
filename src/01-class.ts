@@ -1,6 +1,6 @@
 const date = new Date();
 
-class MyDate {
+export class MyDate {
   year: number;
   month: number;
   day: number;
