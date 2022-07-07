@@ -4,7 +4,6 @@ import { Product } from '../models/product.model';
 import {
   CreateProductDto,
   UpdateProductDto,
-  FindProductDto,
 } from '../dtos/product.dto';
 
 export class ProductMemoryService {
@@ -20,8 +19,11 @@ export class ProductMemoryService {
         image: faker.image.imageUrl(),
       },
     };
-    this.products.push(newProduct);
     return this.add(newProduct);
+  }
+
+  getAll(){
+    return this.products;
   }
 
   add(product: Product) {
@@ -40,22 +42,7 @@ export class ProductMemoryService {
   }
 
   findOne(id: Product["id"]){
-    return products.find(i => i.id === id);
+    return this.products.find(i => i.id === id);
   }
 
 }
-
-export const products: Product[] = [];
-
-export const updateProduct = (
-  id: Product['id'],
-  changes: UpdateProductDto
-): Product => {
-  const index = products.findIndex((item) => item.id === id);
-  const prevData = products[index];
-  products[index] = {
-    ...prevData,
-    ...changes,
-  };
-  return products[index];
-};
